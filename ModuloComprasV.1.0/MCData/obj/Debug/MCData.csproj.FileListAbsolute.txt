@@ -1,0 +1,5 @@
+c:\users\hjidd\documents\visual studio 2015\Projects\ModuloComprasV.1.0\MCData\bin\Debug\MCData.dll
+c:\users\hjidd\documents\visual studio 2015\Projects\ModuloComprasV.1.0\MCData\bin\Debug\MCData.pdb
+c:\users\hjidd\documents\visual studio 2015\Projects\ModuloComprasV.1.0\MCData\obj\Debug\MCData.csprojResolveAssemblyReference.cache
+c:\users\hjidd\documents\visual studio 2015\Projects\ModuloComprasV.1.0\MCData\obj\Debug\MCData.dll
+c:\users\hjidd\documents\visual studio 2015\Projects\ModuloComprasV.1.0\MCData\obj\Debug\MCData.pdb

@@ -1,0 +1,61 @@
+﻿@model MCData.ModeloVistaProductos
+@{
+    ViewBag.Title = "Modulo de Compras";
+}
+
+@using (Html.BeginForm())
+{
+    <!--Inicio del area con campos ocultos -->
+    <!--Fin del area con campos ocultos -->
+
+    <!--Inicio del area de busqueda -->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h1 class="panel-title">Busqueda de Productos</h1>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.Label("Nombre del Producto")
+                @Html.TextBox("BuscarNombreProducto", "", new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button id="btnBuscar" class="btn btn-sm btn-primary">Buscar</button>
+            <button id="btnReset" class="btn btn-sm btn-primary">Reset</button>
+        </div>
+    </div>
+    <!--Fin del area de busqueda -->
+
+    <!--Inicio del area de lista -->
+    <div class="table-responsive">
+        <table class="table table-condensed table-condensed table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.VistaProductos)
+                {
+                   <tr>
+                       <td>@item.NombreProducto</td>
+                       <td>@item.Descripcion</td>
+                       <td>@item.Precio.ToString("c")</td>
+                       <td>@item.Cantidad</td>
+                   </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!--Fin del area de lista -->
+}
+
+@section scripts
+{
+    <script>
+
+    </script>
+}
