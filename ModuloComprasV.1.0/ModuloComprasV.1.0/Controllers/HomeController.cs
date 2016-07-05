@@ -23,11 +23,20 @@ namespace ModuloComprasV._1._0.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult Index(ModeloVistaProductos vm)
         {
-            ViewBag.Message = "Your contact page.";
+            vm.EsValido = ModelState.IsValid;
+            vm.ManejadorSolicitud();
 
-            return View();
+            if (vm.EsValido)
+            {
+                ModelState.Clear();
+            }
+
+            return View(vm);
         }
+
+
     }
 }

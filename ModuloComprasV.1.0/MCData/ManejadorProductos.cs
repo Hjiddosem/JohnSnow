@@ -8,12 +8,17 @@ namespace MCData
 {
     public class ManejadorProductos
     {
-        public List<Productos> Get()
+        public List<Productos> Get(Productos entidad)
         {
             List<Productos> ret = new List<Productos>();
 
             // QUE HACER: Agregar el metodo de acceso a datos aqui
             ret = CreadorDatos();
+
+            if (!string.IsNullOrEmpty(entidad.NombreProducto))
+            {
+                ret = ret.FindAll(p => p.NombreProducto.ToLower().StartsWith(entidad.NombreProducto, StringComparison.CurrentCultureIgnoreCase));
+            }
 
             return ret;
         }
