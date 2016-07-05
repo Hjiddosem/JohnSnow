@@ -7,8 +7,9 @@
 {
     <!--Inicio del area con campos ocultos -->
     @Html.HiddenFor(m=>m.EventCommand)
-    @Html.HiddenFor(m => m.Modo
-)
+    @Html.HiddenFor(m => m.Modo)
+    @Html.HiddenFor(m=>m.EventArgument)
+
     <!--Fin del area con campos ocultos -->
 
     <!--Inicio del area de busqueda -->
@@ -51,6 +52,7 @@
         <table class="table table-condensed table-condensed table-striped table-hover table-bordered">
             <thead>
                 <tr>
+                    <th class="pdsa-action-button-column">Editar</th>
                     <th>Nombre del Producto</th>
                     <th>Descripción</th>
                     <th>Precio</th>
@@ -61,6 +63,13 @@
                 @foreach (var item in Model.VistaProductos)
                 {
                    <tr>
+                       <td class="pdsa-action-button-column">
+                           <a href="#" data-pdsa-action="edit"
+                              data-pdsa-val="@item.IdProducto" 
+                              class="btn btn-primary btn-sm">
+                               <i class="glyphicon glyphicon-edit"></i>
+                           </a>
+                       </td>
                        <td>@item.NombreProducto</td>
                        <td>@item.Descripcion</td>
                        <td>@item.Precio.ToString("c")</td>
@@ -146,6 +155,7 @@
                 e.preventDefault();
 
                 $("#EventCommand").val($(this).data("pdsa-action"));
+                $("#EventArgument").val($(this).data("pdsa-val"));
 
                 $("form").submit();
             });

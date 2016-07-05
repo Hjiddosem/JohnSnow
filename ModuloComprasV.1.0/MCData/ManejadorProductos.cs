@@ -8,6 +8,67 @@ namespace MCData
 {
     public class ManejadorProductos
     {
+        public ManejadorProductos()
+        {
+            ValidacionErrores = new List<KeyValuePair<string, string>>();
+        }
+
+        public List<KeyValuePair<string, string>> ValidacionErrores { get; set; }
+
+        public bool Validar(Productos entidad)
+        {
+            ValidacionErrores.Clear();
+
+            if (!string.IsNullOrEmpty(entidad.NombreProducto))
+            {
+                if (entidad.NombreProducto.ToLower()==entidad.NombreProducto)
+                {
+                    ValidacionErrores.Add(new KeyValuePair<string, string>("NombreProducto", "El nombre del producto no debe estar todo en minusculas."));
+                }
+            }
+
+            return (ValidacionErrores.Count == 0);
+        }
+
+        public Productos Get(int idProducto)
+        {
+            List<Productos> list = new List<Productos>();
+            Productos ret = new Productos();
+
+            //QUE HACER: Llamar al metodo de acceso de datos aqui
+            list = CreadorDatos();
+
+            ret = list.Find(p => p.IdProducto == idProducto);
+
+            return ret;
+        }
+
+        public bool Actualizar(Productos entidad)
+        {
+            bool ret = false;
+
+            ret = Validar(entidad);
+            if (ret)
+            {
+                // QUE HACER: Crear el codigo de actualizar aqui
+            }
+
+            return ret;
+        }
+
+        public bool Insertar(Productos entidad)
+        {
+            bool ret = false;
+
+            ret = Validar(entidad);
+            if (ret)
+            {
+                // QUE HACER: Crear el codigo INSERT aqui
+            }
+
+            return ret;
+        }
+
         public List<Productos> Get(Productos entidad)
         {
             List<Productos> ret = new List<Productos>();

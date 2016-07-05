@@ -22,15 +22,20 @@ namespace MCData
         public List<Productos> VistaProductos { get; set; }
         public Productos BusquedaEntidad { get; set; }
 
+        public string EventArgument { get; set; }
+
         public bool AreaDetalleVisible { get; set; }
         public bool AreaListaVisible { get; set; }
         public bool AreaBusquedaVisible { get; set; }
         public bool EsValido { get; set; }
         public string Modo { get; set; }
+        public List<KeyValuePair<string, string>> ValidacionErrores { get; set; }
 
         private void Iniciar()
         {
             EventCommand = "List";
+            EventArgument = string.Empty;
+            ValidacionErrores = new List<KeyValuePair<string, string>>();
 
             ModoLista();
         }
@@ -42,14 +47,17 @@ namespace MCData
                 case "search":
                     Get();
                     break;
+
                 case "resetsearch":
                     ReBusqueda();
                     Get();
                     break;
+
                 case "cancel":
                     ModoLista();
                     Get();
                     break;
+
                 case "save":
                     Guardar();
                     if (EsValido)
@@ -57,9 +65,15 @@ namespace MCData
                         Get();
                     }
                     break;
+
+                case "edit":
+                    System.Diagnostics.Debugger.Break();
+                    break;
+
                 case "add":
                     Agregar();
                     break;
+
                 default:
                     break;
             }
@@ -67,14 +81,20 @@ namespace MCData
 
         private void Guardar()
         {
-            if (EsValido)
+            ManejadorProductos mgr = new ManejadorProductos();
+
+            if (Modo == "Add")
             {
-                if (Modo == "Add")
-                {
-                    // Agregar datos a base de datos aqui
-                }
+                mgr.Insertar(Entidad);
             }
-            else
+
+            ValidacionErrores = mgr.ValidacionErrores;
+            if (ValidacionErrores.Count > 0)
+            {
+                EsValido = false;
+            }
+
+            if (!EsValido)
             {
                 if (Modo=="Add")
                 {
@@ -105,6 +125,11 @@ namespace MCData
             ModoAgregar();
         }
 
+        private void Editar()
+        {
+            ManejadorProductos mgr = new ManejadorProductos();
+        }
+
         private void ModoAgregar()
         {
             AreaListaVisible = false;
@@ -112,6 +137,15 @@ namespace MCData
             AreaDetalleVisible = true;
 
             Modo = "Add";
+        }
+
+        private void ModoEditar()
+        {
+            AreaListaVisible = false;
+            AreaBusquedaVisible = false;
+            AreaDetalleVisible = true;
+
+            Modo = "Edit";
         }
 
         private void ReBusqueda()
