@@ -34,6 +34,29 @@ namespace PTCCommon
             Modo = "List";
         }
 
+        protected virtual void ReBusqueda()
+        {
+
+        }
+
+        protected virtual void ModoAgregar()
+        {
+            AreaListaVisible = false;
+            AreaBusquedaVisible = false;
+            AreaDetalleVisible = true;
+
+            Modo = "Add";
+        }
+
+        protected virtual void ModoEditar()
+        {
+            AreaListaVisible = false;
+            AreaBusquedaVisible = false;
+            AreaDetalleVisible = true;
+
+            Modo = "Edit";
+        }
+
         protected virtual void Iniciar()
         {
             EventCommand = "List";
@@ -48,6 +71,37 @@ namespace PTCCommon
         protected virtual void Get()
         {
 
+        }
+
+        protected virtual void Agregar()
+        {
+            ModoAgregar();
+        }
+
+        protected virtual void Editar()
+        {
+            ModoEditar();
+        }
+
+        protected virtual void Eliminar()
+        {
+            ModoLista();
+        }
+
+        protected virtual void Guardar()
+        {            
+            if (ValidacionErrores.Count > 0)
+            {
+                EsValido = false;
+            }
+
+            if (!EsValido)
+            {
+                if (Modo == "Add")
+                {
+                    ModoAgregar();
+                }
+            }
         }
     }
 }

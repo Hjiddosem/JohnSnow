@@ -1,9 +1,6 @@
 ﻿using PTCCommon;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MCData
 {
@@ -73,7 +70,7 @@ namespace MCData
             }
         }
 
-        private void Guardar()
+        protected override void Guardar()
         {
             ManejadorProductos mgr = new ManejadorProductos();
 
@@ -81,23 +78,17 @@ namespace MCData
             {
                 mgr.Insertar(Entidad);
             }
+            else
+            {
+                mgr.Actualizar(Entidad);
+            }
 
             ValidacionErrores = mgr.ValidacionErrores;
-            if (ValidacionErrores.Count > 0)
-            {
-                EsValido = false;
-            }
 
-            if (!EsValido)
-            {
-                if (Modo=="Add")
-                {
-                    ModoAgregar();
-                }
-            }
+            base.Guardar();
         }
                 
-        private void Agregar()
+        protected override void Agregar()
         {
             EsValido = true;
 
@@ -105,15 +96,19 @@ namespace MCData
             Entidad.Cantidad = 1;
             Entidad.Precio = 0;
 
-            ModoAgregar();
+            base.Agregar();
         }
 
-        private void Editar()
+        protected override void Editar()
         {
             ManejadorProductos mgr = new ManejadorProductos();
+
+            Entidad = mgr.Get(Convert.ToInt32(EventArgument));
+
+            base.Editar();
         }
 
-        private void Eliminar()
+        protected override void Eliminar()
         {
             ManejadorProductos mgr = new ManejadorProductos();
             Entidad = new Productos();
@@ -122,28 +117,12 @@ namespace MCData
             mgr.Eliminar(Entidad);
             Get();
 
-            ModoLista();
+            base.Eliminar();
         }
 
-        private void ModoAgregar()
-        {
-            AreaListaVisible = false;
-            AreaBusquedaVisible = false;
-            AreaDetalleVisible = true;
+        
 
-            Modo = "Add";
-        }
-
-        private void ModoEditar()
-        {
-            AreaListaVisible = false;
-            AreaBusquedaVisible = false;
-            AreaDetalleVisible = true;
-
-            Modo = "Edit";
-        }
-
-        private void ReBusqueda()
+        protected override void ReBusqueda()
         {
             BusquedaEntidad = new Productos();
         }
@@ -152,11 +131,6 @@ namespace MCData
             ManejadorProductos mgr = new ManejadorProductos();
 
             VistaProductos = mgr.Get(BusquedaEntidad);
-        }
-
-        public static implicit operator ModeloVistaProductos(ManejadorProductos v)
-        {
-            throw new NotImplementedException();
-        }
+        }        
     }
 }
