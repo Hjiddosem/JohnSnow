@@ -57,6 +57,7 @@
                     <th>Descripción</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
+                    <th class="pdsa-action-button-column">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,6 +75,14 @@
                        <td>@item.Descripcion</td>
                        <td>@item.Precio.ToString("c")</td>
                        <td>@item.Cantidad</td>
+                       <td class="pdsa-action-button-column">
+                           <a href="#" data-pdsa-action="delete"
+                              data-pdsa-val="@item.IdProducto"
+                              onclick="return confirm('Eliminar este Producto?')"
+                              class="btn btn-danger btn-sm">
+                               <i class="glyphicon glyphicon-trash"></i>
+                           </a>
+                       </td>
                    </tr>
                 }
             </tbody>

@@ -167,6 +167,10 @@
       <Project>{76da6022-2596-4493-89a3-62dbc76af157}</Project>
       <Name>MCData</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PTCCommon\PTCCommon.csproj">
+      <Project>{6d198693-72c4-4003-932b-152345f50f4b}</Project>
+      <Name>PTCCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

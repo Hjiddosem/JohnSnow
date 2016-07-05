@@ -69,6 +69,12 @@ namespace MCData
             return ret;
         }
 
+        public bool Eliminar(Productos entidad)
+        {
+            // QUE HACER: Crear el codigo de eliminar aqui
+            return true;
+        }
+
         public List<Productos> Get(Productos entidad)
         {
             List<Productos> ret = new List<Productos>();

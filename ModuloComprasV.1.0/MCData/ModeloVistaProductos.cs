@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTCCommon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,39 +7,26 @@ using System.Threading.Tasks;
 
 namespace MCData
 {
-    public class ModeloVistaProductos
+    public class ModeloVistaProductos : ModeloBaseVistas
     {
-        public ModeloVistaProductos()
+        public ModeloVistaProductos() : base()
         {
-            Iniciar();
-
-            VistaProductos = new List<Productos>();
-            BusquedaEntidad = new Productos();
-            Entidad = new Productos();
+                        
         }
 
-        public Productos Entidad { get; set; }
-        public string EventCommand { get; set; }
+        public Productos Entidad { get; set; }        
         public List<Productos> VistaProductos { get; set; }
         public Productos BusquedaEntidad { get; set; }
 
-        public string EventArgument { get; set; }
-
-        public bool AreaDetalleVisible { get; set; }
-        public bool AreaListaVisible { get; set; }
-        public bool AreaBusquedaVisible { get; set; }
-        public bool EsValido { get; set; }
-        public string Modo { get; set; }
-        public List<KeyValuePair<string, string>> ValidacionErrores { get; set; }
-
-        private void Iniciar()
+        protected override void Iniciar()
         {
-            EventCommand = "List";
-            EventArgument = string.Empty;
-            ValidacionErrores = new List<KeyValuePair<string, string>>();
+            VistaProductos = new List<Productos>();
+            BusquedaEntidad = new Productos();
+            Entidad = new Productos();
 
-            ModoLista();
+            base.Iniciar();
         }
+
         public void ManejadorSolicitud()
         {
             switch (EventCommand.ToLower())
@@ -67,7 +55,13 @@ namespace MCData
                     break;
 
                 case "edit":
-                    System.Diagnostics.Debugger.Break();
+                    EsValido = true;
+                    Editar();
+                    break;
+
+                case "delete":
+                    ReBusqueda();
+                    Eliminar();
                     break;
 
                 case "add":
@@ -102,18 +96,7 @@ namespace MCData
                 }
             }
         }
-
-        private void ModoLista()
-        {
-            EsValido = true;
-
-            AreaListaVisible = true;
-            AreaBusquedaVisible = true;
-            AreaDetalleVisible = false;
-
-            Modo = "List";
-        }
-
+                
         private void Agregar()
         {
             EsValido = true;
@@ -128,6 +111,18 @@ namespace MCData
         private void Editar()
         {
             ManejadorProductos mgr = new ManejadorProductos();
+        }
+
+        private void Eliminar()
+        {
+            ManejadorProductos mgr = new ManejadorProductos();
+            Entidad = new Productos();
+            Entidad.IdProducto = Convert.ToInt32(EventArgument);
+
+            mgr.Eliminar(Entidad);
+            Get();
+
+            ModoLista();
         }
 
         private void ModoAgregar()
@@ -152,7 +147,7 @@ namespace MCData
         {
             BusquedaEntidad = new Productos();
         }
-        public void Get()
+        protected override void Get()
         {
             ManejadorProductos mgr = new ManejadorProductos();
 

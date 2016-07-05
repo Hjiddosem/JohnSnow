@@ -124,3 +124,5 @@ C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\bin
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.csprojResolveAssemblyReference.cache
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.dll
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.pdb
+C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\bin\PTCCommon.dll
+C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\bin\PTCCommon.pdb

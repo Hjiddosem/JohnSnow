@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuloComprasV.1.0", "ModuloComprasV.1.0\ModuloComprasV.1.0.csproj", "{B759BABF-0266-44D7-AF3C-DE2E9B3F5DD1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCData", "MCData\MCData.csproj", "{76DA6022-2596-4493-89A3-62DBC76AF157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTCCommon", "PTCCommon\PTCCommon.csproj", "{6D198693-72C4-4003-932B-152345F50F4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{76DA6022-2596-4493-89A3-62DBC76AF157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76DA6022-2596-4493-89A3-62DBC76AF157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76DA6022-2596-4493-89A3-62DBC76AF157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D198693-72C4-4003-932B-152345F50F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D198693-72C4-4003-932B-152345F50F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D198693-72C4-4003-932B-152345F50F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D198693-72C4-4003-932B-152345F50F4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
