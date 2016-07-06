@@ -15,3 +15,5 @@ C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\obj\Debug\MCDat
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\obj\Debug\MCData.csprojResolveAssemblyReference.cache
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.dll
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.pdb
+C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.dll
+C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.pdb
