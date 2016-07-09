@@ -214,3 +214,5 @@ G:\ModuloComprasV.1.0\ModuloComprasV.1.0\bin\Newtonsoft.Json.xml
 G:\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.csprojResolveAssemblyReference.cache
 G:\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.dll
 G:\ModuloComprasV.1.0\ModuloComprasV.1.0\obj\Debug\ModuloComprasV.1.0.pdb
+C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\bin\PTCCommon.dll
+C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\ModuloComprasV.1.0\bin\PTCCommon.pdb
