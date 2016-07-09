@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MCData
 {
@@ -22,5 +17,8 @@ namespace MCData
         public decimal Precio { get; set; }
         [Range(1, 99, ErrorMessage = "La {0} debe estar entre {1} y {2}.")]
         public int Cantidad { get; set; }
+        public string Marca { get; set; }
+        public string UnidadMedida { get; set; }
+        public string Estado { get; set; }
     }
 }

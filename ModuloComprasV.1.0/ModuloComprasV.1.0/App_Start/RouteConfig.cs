@@ -18,6 +18,12 @@ namespace ModuloComprasV._1._0
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "MarcasPage",                                              // Route name
+                url: "{controller}/{action}/{id}",                           // URL with parameters
+                defaults: new { controller = "Home", action = "MarcasPage", id = "UrlParameter.Optional" }  // Parameter defaults
+            );
         }
     }
 }

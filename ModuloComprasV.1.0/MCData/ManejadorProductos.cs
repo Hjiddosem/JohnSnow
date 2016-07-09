@@ -23,7 +23,7 @@ namespace MCData
             {
                 if (entidad.NombreProducto.ToLower()==entidad.NombreProducto)
                 {
-                    ValidacionErrores.Add(new KeyValuePair<string, string>("NombreProducto", "El nombre del producto no debe estar todo en minusculas."));
+                    
                 }
             }
 
@@ -32,8 +32,8 @@ namespace MCData
 
         public Productos Get(int idProducto)
         {
-            List<Productos> list = new List<Productos>();
-            Productos ret = new Productos();
+            var list = new List<Productos>();
+            var ret = new Productos();
 
             //QUE HACER: Llamar al metodo de acceso de datos aqui
             list = CreadorDatos();
@@ -77,7 +77,7 @@ namespace MCData
 
         public List<Productos> Get(Productos entidad)
         {
-            List<Productos> ret = new List<Productos>();
+            var ret = new List<Productos>();
 
             // QUE HACER: Agregar el metodo de acceso a datos aqui
             ret = CreadorDatos();
@@ -92,15 +92,18 @@ namespace MCData
 
         private List<Productos> CreadorDatos()
         {
-            List<Productos> ret = new List<Productos>();
+            var ret = new List<Productos>();
 
             ret.Add(new Productos()
             {
                 IdProducto = 1,
                 NombreProducto = "Iphone 6s",
                 Descripcion = "IOS 9, 16Gb, 13Mpx, 3D Touch",
-                Precio = Convert.ToDecimal(750.00),
-                Cantidad = 12
+                Precio = Convert.ToDecimal(value: 750.00),
+                Cantidad = 12,
+                Estado="Activo",
+                Marca="Apple",
+                UnidadMedida="Kilogramos (Kg)" 
             });
 
             ret.Add(new Productos()
@@ -108,8 +111,11 @@ namespace MCData
                 IdProducto = 2,
                 NombreProducto = "MacBook Air 13",
                 Descripcion = "macOS Sierra, i5 Dual Core a 1.6 Ghz, 8Gb RAM, 256Gb, Modelo 2015",
-                Precio = Convert.ToDecimal(1350.00),
-                Cantidad = 4
+                Precio = Convert.ToDecimal(value: 1350.00),
+                Cantidad = 4,
+                Estado = "Activo",
+                Marca = "Apple",
+                UnidadMedida = "Kilogramos (Kg)"
             });
 
             ret.Add(new Productos()
@@ -117,11 +123,16 @@ namespace MCData
                 IdProducto = 3,
                 NombreProducto = "MacBook Pro 13",
                 Descripcion = "macOS Sierra, i5 Dual Core a 2.2 Ghz, 8Gb RAM, 256Gb, Modelo 2015",
-                Precio = Convert.ToDecimal(1650.00),
-                Cantidad = 3
+                Precio = Convert.ToDecimal(value: 1650.00),
+                Cantidad = 3,
+                Estado = "Activo",
+                Marca = "Apple",
+                UnidadMedida = "Kilogramos (Kg)"
             });
 
             return ret;
         }
+
+        
     }
 }

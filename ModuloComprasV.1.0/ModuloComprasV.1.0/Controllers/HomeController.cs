@@ -16,6 +16,13 @@ namespace ModuloComprasV._1._0.Controllers
             return View(mv);
         }
 
+        public ActionResult MarcasPage()
+        {
+            ModeloVistaMarcas mv = new ModeloVistaMarcas();
+            mv.ManejadorSolicitud();
+            return View(mv);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -44,6 +51,26 @@ namespace ModuloComprasV._1._0.Controllers
             return View(vm);
         }
 
+        [HttpPost]
+        public ActionResult MarcasPage(ModeloVistaMarcas vm)
+        {
+            vm.EsValido = ModelState.IsValid;
+            vm.ManejadorSolicitud();
+
+            if (vm.EsValido)
+            {
+                ModelState.Clear();
+            }
+            else
+            {
+                foreach (KeyValuePair<string, string> item in vm.ValidacionErrores)
+                {
+                    ModelState.AddModelError(item.Key, item.Value);
+                }
+            }
+
+            return View(vm);
+        }
 
     }
 }

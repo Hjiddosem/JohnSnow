@@ -21,10 +21,15 @@ namespace ModuloComprasV._1._0
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/jquery-2.2.3.min.js",
+                      "~/Scripts/tether.min.js",
+                      "~/Scripts/mdb.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-theme.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/mdb.min.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/site.css"));
         }
     }

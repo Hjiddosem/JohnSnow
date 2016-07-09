@@ -7,7 +7,8 @@ namespace MCData
     public class ModeloVistaProductos : ModeloBaseVistas
     {
         public ModeloVistaProductos() : base()
-        {                        
+        {
+                        
         }
 
         public Productos Entidad { get; set; }        
@@ -21,7 +22,53 @@ namespace MCData
             Entidad = new Productos();
 
             base.Iniciar();
-        }        
+        }
+
+        public void ManejadorSolicitud()
+        {
+            switch (EventCommand.ToLower())
+            {
+                case "list":
+                case "search":
+                    Get();
+                    break;
+
+                case "resetsearch":
+                    ReBusqueda();
+                    Get();
+                    break;
+
+                case "cancel":
+                    ModoLista();
+                    Get();
+                    break;
+
+                case "save":
+                    Guardar();
+                    if (EsValido)
+                    {
+                        Get();
+                    }
+                    break;
+
+                case "edit":
+                    EsValido = true;
+                    Editar();
+                    break;
+
+                case "delete":
+                    ReBusqueda();
+                    Eliminar();
+                    break;
+
+                case "add":
+                    Agregar();
+                    break;
+
+                default:
+                    break;
+            }
+        }
 
         protected override void Guardar()
         {
@@ -46,8 +93,10 @@ namespace MCData
             EsValido = true;
 
             Entidad = new Productos();
-            Entidad.Cantidad = 1;
+            Entidad.Cantidad = 0;
             Entidad.Precio = 0;
+            Entidad.UnidadMedida = "Mililitros (ml)";
+            Entidad.Estado = "Activo";
 
             base.Agregar();
         }
@@ -71,21 +120,19 @@ namespace MCData
             Get();
 
             base.Eliminar();
-        }        
+        }
+
+        
 
         protected override void ReBusqueda()
         {
             BusquedaEntidad = new Productos();
-
-            base.ReBusqueda();
         }
         protected override void Get()
         {
             ManejadorProductos mgr = new ManejadorProductos();
 
             VistaProductos = mgr.Get(BusquedaEntidad);
-
-            base.Get();
         }        
     }
 }

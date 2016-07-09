@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PTCCommon
 {
@@ -18,52 +22,6 @@ namespace PTCCommon
         public bool EsValido { get; set; }
         public string Modo { get; set; }
         public List<KeyValuePair<string, string>> ValidacionErrores { get; set; }
-
-        public virtual void ManejadorSolicitud()
-        {
-            switch (EventCommand.ToLower())
-            {
-                case "list":
-                case "search":
-                    Get();
-                    break;
-
-                case "resetsearch":
-                    ReBusqueda();
-                    Get();
-                    break;
-
-                case "cancel":
-                    ModoLista();
-                    Get();
-                    break;
-
-                case "save":
-                    Guardar();
-                    if (EsValido)
-                    {
-                        Get();
-                    }
-                    break;
-
-                case "edit":
-                    EsValido = true;
-                    Editar();
-                    break;
-
-                case "delete":
-                    ReBusqueda();
-                    Eliminar();
-                    break;
-
-                case "add":
-                    Agregar();
-                    break;
-
-                default:
-                    break;
-            }
-        }
 
         protected virtual void ModoLista()
         {

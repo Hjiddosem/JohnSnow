@@ -3,8 +3,3 @@ C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\bin\Debug\PT
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.csprojResolveAssemblyReference.cache
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.dll
 C:\Users\IVS\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.pdb
-C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\bin\Debug\PTCCommon.dll
-C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\bin\Debug\PTCCommon.pdb
-C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.csprojResolveAssemblyReference.cache
-C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.dll
-C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\PTCCommon\obj\Debug\PTCCommon.pdb

@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorMarcas.cs" />
     <Compile Include="ManejadorProductos.cs" />
+    <Compile Include="Marcas.cs" />
+    <Compile Include="ModeloVistaMarcas.cs" />
     <Compile Include="ModeloVistaProductos.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
