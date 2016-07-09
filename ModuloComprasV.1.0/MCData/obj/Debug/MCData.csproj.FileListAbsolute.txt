@@ -31,3 +31,10 @@ G:\ModuloComprasV.1.0\MCData\obj\Debug\MCData.dll
 G:\ModuloComprasV.1.0\MCData\obj\Debug\MCData.pdb
 C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.dll
 C:\Users\hjidd\Documents\GitHub\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.pdb
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\MCData.dll
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\MCData.pdb
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.dll
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\bin\Debug\PTCCommon.pdb
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\obj\Debug\MCData.csprojResolveAssemblyReference.cache
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\obj\Debug\MCData.dll
+C:\Users\Enmanuel-PC\Documents\JohnSnow\ModuloComprasV.1.0\MCData\obj\Debug\MCData.pdb
